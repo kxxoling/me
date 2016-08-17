@@ -1,0 +1,57 @@
+[
+  {
+    "id": "app.components.Header.githubSummary",
+    "defaultMessage": "GitHub Summary",
+    "message": ""
+  },
+  {
+    "id": "app.components.Header.jobHistory",
+    "defaultMessage": "Job History",
+    "message": ""
+  },
+  {
+    "id": "app.components.Header.me",
+    "defaultMessage": "About Me",
+    "message": ""
+  },
+  {
+    "id": "app.components.HomePage.bio",
+    "defaultMessage": "This is HomePage components !",
+    "message": ""
+  },
+  {
+    "id": "app.components.HomePage.name",
+    "defaultMessage": "Kane Blueriver",
+    "message": ""
+  },
+  {
+    "id": "app.components.NotFoundPage.header",
+    "defaultMessage": "This is NotFoundPage component !",
+    "message": ""
+  },
+  {
+    "id": "app.components.Timeline.header",
+    "defaultMessage": "This is the Timeline component !",
+    "message": ""
+  },
+  {
+    "id": "app.containers.GitHubSummary.forkedFrom",
+    "defaultMessage": "Forked from",
+    "message": ""
+  },
+  {
+    "id": "app.containers.GitHubSummary.issuesCount",
+    "defaultMessage": "Unresolved issues",
+    "message": ""
+  },
+  {
+    "id": "app.containers.GitHubSummary.starredBy",
+    "defaultMessage": "Starred by",
+    "message": ""
+  },
+  {
+    "id": "app.containers.JobHistory.header",
+    "defaultMessage": "This is JobHistory container !",
+    "message": ""
+  }
+]

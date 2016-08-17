@@ -1,0 +1,16 @@
+.jobHistory {  /* stylelint-ignore */
+}
+
+.container {
+  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container::after {
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
+}

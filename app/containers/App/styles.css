@@ -1,0 +1,20 @@
+/**
+ * styles.css
+ *
+ * App container styles
+ */
+
+.container {
+  display: block;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  color: #7F8C97;
+  background-color: #E9F0F5;
+}
