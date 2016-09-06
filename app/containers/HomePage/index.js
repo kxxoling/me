@@ -12,30 +12,29 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
+import styles from './styles.css';
 
 export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   render() {
     const avatarUrl = 'https://avatars0.githubusercontent.com/u/1227139';
     return (
-      <div className="homePage">
-        <div className="avatarContainer">
-          <figure className="avatar">
-            <img src={avatarUrl} alt="My avatar" />
+      <div className={styles.home}>
+        <div className={styles.centerContainer}>
+          <figure className={styles.avatarContainer}>
+            <img src={avatarUrl} alt="Kane Blueriver" />
             <figcaption>
               <FormattedMessage {...messages.name} />
             </figcaption>
           </figure>
-          <div className="socialIcons">
+          <div className="bio">
+            <p className="bioItem">
+              <FormattedMessage {...messages.bio} />
+            </p>
+            <p className="bioItem">
+              Some self introduction.
+            </p>
           </div>
-        </div>
-        <div className="bio">
-          <p className="bioItem">
-            <FormattedMessage {...messages.bio} />
-          </p>
-          <p className="bioItem">
-            Some self introduction.
-          </p>
         </div>
       </div>
     );
