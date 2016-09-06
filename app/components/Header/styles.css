@@ -1,2 +1,36 @@
 .header { /* stylelint-ignore */
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+
+.icon {
+  color: #fefefe;
+}
+
+.iconContainer {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.iconsContainer {
+  z-index: 10;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  height: 360px;
+  margin: auto;
+  text-align: center;
 }

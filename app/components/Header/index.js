@@ -25,26 +25,27 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
     const url = 'https://plus.google.com';
 
     const fontConfig = {
-      size: "4x",
-      inverse: false,
-    }
+      size: '4x',
+      inverse: true,
+    };
+
     return (
       <div className={styles.header}>
-        <ul>
-          <li>
-            <Link to="">
+        <ul className={styles.iconsContainer}>
+          <li className={styles.iconContainer}>
+            <Link className={styles.icon} to="">
               <Icon name="home" {...fontConfig} />
               <FormattedMessage {...messages.me} />
             </Link>
           </li>
-          <li>
-            <Link to="github">
+          <li className={styles.iconContainer}>
+            <Link className={styles.icon} to="github">
               <Icon name="github" {...fontConfig} />
               <FormattedMessage {...messages.githubSummary} />
             </Link>
           </li>
-          <li>
-            <Link to="jobs">
+          <li className={styles.iconContainer}>
+            <Link className={styles.icon} to="jobs">
               <Icon name="briefcase" {...fontConfig} />
               <FormattedMessage {...messages.jobHistory} />
             </Link>
