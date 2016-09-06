@@ -15,6 +15,7 @@ import {
   GooglePlusCount,
 } from 'react-social';
 
+import { Icon } from 'react-fa';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 import styles from './styles.css';
@@ -22,22 +23,30 @@ import styles from './styles.css';
 class Header extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     const url = 'https://plus.google.com';
+
+    const fontConfig = {
+      size: "4x",
+      inverse: false,
+    }
     return (
       <div className={styles.header}>
         <ul>
           <li>
+            <Link to="">
+              <Icon name="home" {...fontConfig} />
+              <FormattedMessage {...messages.me} />
+            </Link>
+          </li>
+          <li>
             <Link to="github">
+              <Icon name="github" {...fontConfig} />
               <FormattedMessage {...messages.githubSummary} />
             </Link>
           </li>
           <li>
             <Link to="jobs">
+              <Icon name="briefcase" {...fontConfig} />
               <FormattedMessage {...messages.jobHistory} />
-            </Link>
-          </li>
-          <li>
-            <Link to="">
-              <FormattedMessage {...messages.me} />
             </Link>
           </li>
         </ul>
