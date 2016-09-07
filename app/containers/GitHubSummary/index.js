@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
+import Helmet from 'react-helmet';
 
 import messages from './messages';
 import {
@@ -44,6 +45,13 @@ export class GitHubSummary extends React.Component {
 
     return (
       <div className={styles.github}>
+        <Helmet
+          title={messages.title.defaultMessage}
+          meta={[
+            { name: 'description', content: messages.description.defaultMessage },
+          ]}
+        />
+
         <div>
           <h2 className={styles.title}>
             <FormattedMessage {...messages.prsTitle} />

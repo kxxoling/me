@@ -14,4 +14,12 @@ export default defineMessages({
     id: 'app.components.HomePage.bio',
     defaultMessage: 'This is HomePage components !',
   },
+  title: {
+    id: 'app.components.HomePage.title',
+    defaultMessage: 'Kane Blueriver',
+  },
+  description: {
+    id: 'app.components.HomePage.description',
+    defaultMessage: 'It\'s home page!',
+  },
 });

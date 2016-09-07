@@ -26,4 +26,12 @@ export default defineMessages({
     id: 'app.containers.GitHubSummary.reposTitle',
     defaultMessage: 'Repositories:',
   },
+  title: {
+    id: 'app.components.GitHubSummary.title',
+    defaultMessage: 'GitHub Summary | Kane Blueriver',
+  },
+  description: {
+    id: 'app.components.GitHubSummary.description',
+    defaultMessage: 'It\'s GitHub Summary page!',
+  },
 });
