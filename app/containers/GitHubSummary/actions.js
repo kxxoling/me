@@ -5,6 +5,9 @@ import {
   LOAD_PRS,
   LOAD_PRS_SUCCESS,
   LOAD_PRS_ERROR,
+  LOAD_GITHUB_USER,
+  LOAD_GITHUB_USER_SUCCESS,
+  LOAD_GITHUB_USER_ERROR,
 } from './constants';
 
 export function loadRepos() {
@@ -44,5 +47,23 @@ export function loadPrsError(error) {
   return {
     type: LOAD_PRS_ERROR,
     error,
+  };
+}
+
+export function loadGithubUser() {
+  return {
+    type: LOAD_GITHUB_USER,
+  };
+}
+export function loadGithubUserError(error) {
+  return {
+    type: LOAD_GITHUB_USER_ERROR,
+    error,
+  };
+}
+export function loadGithubUserSuccess(user) {
+  return {
+    type: LOAD_GITHUB_USER_SUCCESS,
+    user,
   };
 }

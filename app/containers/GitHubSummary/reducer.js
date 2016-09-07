@@ -7,6 +7,9 @@ import {
   LOAD_PRS,
   LOAD_PRS_SUCCESS,
   LOAD_PRS_ERROR,
+  LOAD_GITHUB_USER,
+  LOAD_GITHUB_USER_ERROR,
+  LOAD_GITHUB_USER_SUCCESS,
 } from './constants';
 
 const initialState = fromJS({
@@ -16,6 +19,9 @@ const initialState = fromJS({
   loadingPrsError: false,
   repos: [],
   prs: [],
+  githubUser: {},
+  loadingGithubUser: false,
+  loadingGithubUserError: false,
 });
 
 function githubRepoReducer(state = initialState, action) {
@@ -45,6 +51,20 @@ function githubRepoReducer(state = initialState, action) {
       return state
         .set('loadingPrs', false)
         .set('loadingPrsError', true);
+
+    case LOAD_GITHUB_USER:
+      return state
+        .set('loadingGithubUser', true)
+        .set('loadingGithubUserError', false);
+    case LOAD_GITHUB_USER_SUCCESS:
+      return state
+        .set('loadingGithubUser', false)
+        .set('loadingGithubUserError', false)
+        .set('githubUser', action.user);
+    case LOAD_GITHUB_USER_ERROR:
+      return state
+        .set('loadingGithubUser', false)
+        .set('loadingGithubUserError', true);
     default:
       return state;
   }

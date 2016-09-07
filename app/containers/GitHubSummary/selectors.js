@@ -37,6 +37,21 @@ const selectLoadingPrsError = () => createSelector(
   (state) => state.get('loadingPrsError'),
 );
 
+const selectGithubUser = () => createSelector(
+  selectGitHubSummaryDomain(),
+  (state) => state.get('githubUser'),
+);
+
+const selectLoadingGithubUser = () => createSelector(
+  selectGitHubSummaryDomain(),
+  (state) => state.get('loadingGithubUser'),
+);
+
+const selectLoadingGithubUserError = () => createSelector(
+  selectGitHubSummaryDomain(),
+  (state) => state.get('loadingGithubUserError'),
+);
+
 export {
   selectGitHubSummaryDomain,
   selectGitHubSummary,
@@ -46,4 +61,7 @@ export {
   selectLoadingPrs,
   selectLoadingPrsError,
   selectPrs,
+  selectGithubUser,
+  selectLoadingGithubUser,
+  selectLoadingGithubUserError,
 };

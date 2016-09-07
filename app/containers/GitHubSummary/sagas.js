@@ -1,5 +1,5 @@
 import { take, call, put, fork } from 'redux-saga/effects';
-import { LOAD_REPOS, LOAD_PRS } from './constants';
+import { LOAD_REPOS, LOAD_PRS, LOAD_GITHUB_USER } from './constants';
 import {
   loadRepos,
   loadReposSuccess,
@@ -7,6 +7,9 @@ import {
   loadPrs,
   loadPrsError,
   loadPrsSuccess,
+  loadGithubUser,
+  loadGithubUserError,
+  loadGithubUserSuccess
 } from './actions';
 
 import request from 'utils/request';
@@ -39,6 +42,19 @@ export function* fetchPrs() {
   }
 }
 
+export function* fetchGithubUser() {
+  const api = `https://api.github.com/users/${username}`;
+
+  put(loadGithubUser());
+  const rsp = yield call(request, api);
+
+  if (rsp.err) {
+    yield put(loadGithubUserError(rsp.err));
+  } else {
+    yield put(loadGithubUserSuccess(rsp.data));
+  }
+}
+
 export function* fetchReposWatcher() {
   while (yield take(LOAD_REPOS)) {
     yield call(fetchRepos);
@@ -51,6 +67,12 @@ export function* fetchPrsWatcher() {
   }
 }
 
+export function* fetchGithubUserWatcher() {
+  while (yield take(LOAD_GITHUB_USER)) {
+    yield call(fetchGithubUser);
+  }
+}
+
 export function* githubData() {
   yield fork(fetchReposWatcher);
 }
@@ -59,7 +81,12 @@ export function* githubPrs() {
   yield fork(fetchPrsWatcher);
 }
 
+export function* githubUser() {
+  yield fork(fetchGithubUser);
+}
+
 export default [
   githubData,
   githubPrs,
+  githubUser,
 ];

@@ -11,6 +11,26 @@
   padding: 10px;
 }
 
+.githubAvatar {
+  width: 240px;
+  height: 240px;
+  position: relative;
+  margin: auto;
+}
+
+.githubAvatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid white;
+}
+
+.githubAvatar .githubIcon {
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+}
+
 .title {
   margin: 0;
   font-size: 40px;
