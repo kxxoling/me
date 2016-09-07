@@ -18,4 +18,12 @@ export default defineMessages({
     id: 'app.containers.GitHubSummary.issuesCount',
     defaultMessage: 'Unresolved issues',
   },
+  prsTitle: {
+    id: 'app.containers.GitHubSummary.prsTitle',
+    defaultMessage: 'Pull Requests:',
+  },
+  reposTitle: {
+    id: 'app.containers.GitHubSummary.reposTitle',
+    defaultMessage: 'Repositories:',
+  },
 });

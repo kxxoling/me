@@ -16,6 +16,7 @@ import {
   loadRepos,
   loadPrs,
 } from './actions';
+import styles from './styles.css';
 
 export class GitHubSummary extends React.Component {
   componentDidMount() {
@@ -42,11 +43,17 @@ export class GitHubSummary extends React.Component {
     ));
 
     return (
-      <div>
+      <div className={styles.github}>
         <div>
+          <h2 className={styles.title}>
+            <FormattedMessage {...messages.prsTitle} />
+          </h2>
           { prs }
         </div>
         <div>
+          <h2 className={styles.title}>
+            <FormattedMessage {...messages.reposTitle} />
+          </h2>
           { repos }
         </div>
       </div>
