@@ -10,4 +10,12 @@ export default defineMessages({
     id: 'app.containers.JobHistory.header',
     defaultMessage: 'This is JobHistory container !',
   },
+  title: {
+    id: 'app.containers.JobHistory.title',
+    defaultMessage: 'My job history',
+  },
+  description: {
+    id: 'app.containers.JobHistory.description',
+    defaultMessage: 'Description of JobHistory',
+  },
 });

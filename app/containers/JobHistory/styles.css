@@ -1,4 +1,12 @@
-.jobHistory {  /* stylelint-ignore */
+.jobHistory {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 160px;
+  overflow: auto;
+  background-color: #ffd700;
+  padding: 10px;
 }
 
 .container {
