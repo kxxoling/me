@@ -6,9 +6,9 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  header: {
-    id: 'app.containers.JobHistory.header',
-    defaultMessage: 'This is JobHistory container !',
+  jobHistory: {
+    id: 'app.containers.JobHistory.jobHistory',
+    defaultMessage: 'Job History',
   },
   title: {
     id: 'app.containers.JobHistory.title',

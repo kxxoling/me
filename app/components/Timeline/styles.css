@@ -3,6 +3,7 @@
   padding: 2em 0;
   margin-top: 2em;
   margin-bottom: 2em;
+  color: #777;
 }
 
 .timeline::before {
@@ -13,7 +14,7 @@
   left: 18px;
   height: 100%;
   width: 4px;
-  background: #D7E4ED;
+  background: white;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -82,16 +83,8 @@
   margin-top: -12px;
 }
 
-.img.picture {
+.img {
   background: #75CE66;
-}
-
-.img.movie {
-  background: #C03B44;
-}
-
-.img.location {
-  background: #F0CA45;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -118,37 +111,20 @@
   clear: both;
 }
 
-.content h2 {
-  color: #303E49;
-}
-
 .content p,
-.content .read-more,
 .content .date {
   font-size: 13px;
   font-size: 0.8125rem;
 }
 
-.content .read-more,
 .content .date {
   display: inline-block;
+  color: #fcfcfc;
 }
 
 .content p {
   margin: 1em 0;
   line-height: 1.6;
-}
-
-.content .read-more {
-  float: right;
-  padding: 0.8em 1em;
-  background: #ACB7C0;
-  color: white;
-  border-radius: 0.25em;
-}
-
-.no-touch .content .read-more:hover {
-  background-color: #BAC4CB;
 }
 
 .content .date {
@@ -179,7 +155,6 @@
     font-size: 1rem;
   }
 
-  .content .read-more,
   .content .date {
     font-size: 14px;
     font-size: 0.875rem;
@@ -198,10 +173,6 @@
     left: 100%;
     border-color: transparent;
     border-left-color: white;
-  }
-
-  .content .read-more {
-    float: left;
   }
 
   .content .date {
@@ -223,10 +194,6 @@
     right: 100%;
     border-color: transparent;
     border-right-color: white;
-  }
-
-  .block:nth-child(even) .content .read-more {
-    float: right;
   }
 
   .block:nth-child(even) .content .date {

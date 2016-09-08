@@ -9,16 +9,13 @@
   padding: 10px;
 }
 
-.container {
-  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+.title {
+  text-align: center;
+  color: white;
+  font-weight: bold;
 }
 
-.container::after {
-  /* clearfix */
-  content: '';
-  display: table;
-  clear: both;
+.iconContainer {
+  text-align: center;
+  padding-top: 30px;
 }

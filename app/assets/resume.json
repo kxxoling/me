@@ -1,0 +1,141 @@
+{
+  "basics": {
+    "name": "王然",
+    "label": "Pythoneer/全栈工程师",
+    "picture": "https://avatars0.githubusercontent.com/u/1227139",
+    "email": "kxxoling@gmail.com",
+    "phone": "",
+    "website": "https://blog.windrunner.info",
+    "summary": "热爱编程，热爱开源。",
+    "location": {
+      "city": "北京",
+      "countryCode": "CN",
+      "region": "Beijing"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "kxxoling",
+        "url": "https://github.com/kxxoling"
+      },
+      {
+        "network": "StackOverflow",
+        "username": "kxxoling",
+        "url": "http://stackoverflow.com/users/2836912/kxxoling"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "致优教育",
+      "position": "高级工程师",
+      "website": "http://zhiyoujiaoyu.com/",
+      "startDate": "2015-10",
+      "endDate": "2016-6",
+      "summary": "一家教育公司",
+      "highlights": [
+        "教师备课平台后端维护、开发及重构。",
+        "职员管理系统前后台及学生端后台系统。"
+      ]
+    },
+    {
+      "company": "面包旅行",
+      "position": "高级 Python 工程师",
+      "website": "http://web.breadtrip.com/",
+      "startDate": "2015-04",
+      "endDate": "2015-09",
+      "summary": "面包旅行是一家致力于旅游行记管理的创业公司。",
+      "highlights": [
+        "完善网站的测试系统和框架。",
+        "将部分 Redis 存储的数据迁移至 AWS DynamoDB。"
+      ]
+    },
+    {
+      "company": "天使汇",
+      "position": "Python web 工程师",
+      "website": "http://web.breadtrip.com/",
+      "startDate": "2014-05",
+      "endDate": "2015-03",
+      "summary": "天使汇是联系投资人和创业者的平台。",
+      "highlights": [
+        "从 0 开始网站开发，包括前端模板编写和后端接口实现。",
+        "培养和训练实习生。",
+        "搭建内部的 bug 追踪系统和代码管理系统",
+        "内部开发文档管理"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "北京信息科技大写",
+      "area": "北京",
+      "studyType": "本科",
+      "startDate": "2008-09",
+      "endDate": "2012-07"
+    }
+  ],
+  "skills": [
+    {
+      "name": "前端开发",
+      "level": "熟练",
+      "keywords": [
+        "React.js",
+        "React-Redux",
+        "React-Saga",
+        "Vue.js",
+        "Webpack"
+      ]
+    },
+    {
+      "name": "Python web 工程师",
+      "level": "Master",
+      "keywords": [
+        "Django",
+        "Flask",
+        "Tornado",
+        "Mako",
+        "SQLAlchemy",
+        "PostgreSQL",
+        "Redis",
+        "MongoDB",
+        "DynamoDB",
+        "Gunicorn",
+        "REST"
+      ]
+    },
+    {
+      "name": "服务器管理员",
+      "level": "兼职",
+      "keywords": [
+        "Fabric",
+        "Docker",
+        "AWS",
+        "GitLab & CI"
+      ]
+    },
+    {
+      "name": "",
+      "level": "",
+      "keywords": [
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "中文",
+      "fluency": "母语"
+    },
+    {
+      "language": "英文",
+      "fluency": "熟练阅读英文文档"
+    }
+  ],
+  "interests": [
+    {
+      "name": "自宅",
+      "keywords": [
+        "自宅"
+      ]
+    }
+  ]
+}

@@ -3,6 +3,8 @@ import React from 'react';
 import classNames from 'classnames';
 import styles from './styles.css';
 
+import resume from '../../assets/resume.json';
+
 class Timeline extends React.Component {
   renderBlock(job) {
     const img = 'https://avatars0.githubusercontent.com/u/1227139';
@@ -12,13 +14,20 @@ class Timeline extends React.Component {
           <img src={img} alt="" />
         </div>
         <div className={styles.content}>
-          <h2>{job.company}</h2>
-          <p>{job.details}</p>
-          <a href="#0" className={styles['read-more']}>Read more</a>
+          <h2>{job.company}
+            <span className={styles.position}>{job.position}</span>
+          </h2>
+          <p className={styles.summary}>{job.summary}</p>
+          <ul className={styles.highlightContainer}>
+            {
+              job.highlights.map((highlight) =>
+                <li className={styles.highlight}>{highlight}</li>)
+            }
+          </ul>
           <span className={styles.date}>
-            {job.joinTime}
+            {job.startDate}
             -
-            {job.leaveTime}
+            {job.endDate}
           </span>
         </div>
       </div>
@@ -34,12 +43,7 @@ class Timeline extends React.Component {
   }
 
   render() {
-    const jobs = [{
-      company: 'PEVC',
-      details: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.',
-      joinTime: '2012',
-      leaveTime: '2014',
-    }];
+    const jobs = resume.work;
     return (
       <div>
         <section className={classNames(styles.timeline)}>
