@@ -5,6 +5,12 @@ import { createStructuredSelector } from 'reselect';
 import Helmet from 'react-helmet';
 import Icon from 'react-fa';
 
+import Tabs from 'material-ui/Tabs/Tabs';
+import Tab from 'material-ui/Tabs/Tab';
+import SwipeableViews from 'react-swipeable-views';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
 import messages from './messages';
 import {
   selectLoadingRepos,
@@ -24,11 +30,37 @@ import {
 } from './actions';
 import styles from './styles.css';
 
+const slideStyles = {
+  slide: {
+    padding: 15,
+    minHeight: 100,
+    color: '#fff',
+  },
+  slide1: {
+    backgroundColor: '#FEA900',
+  },
+  slide2: {
+    backgroundColor: '#B3DC4A',
+  },
+};
+
 export class GitHubSummary extends React.Component {
+  state = {
+    index: 1,
+  };
+
   componentDidMount() {
     this.props.fetchRepos();
     this.props.fetchPrs();
     this.props.fetchGithubUser();
+    this.handleChangeTabs.bind(this);
+    this.handleChangeIndex.bind(this);
+  }
+
+  handleChangeIndex(index) {
+    this.setState({
+      index,
+    });
   }
 
   renderGithubCard(user) {
@@ -38,30 +70,51 @@ export class GitHubSummary extends React.Component {
           <img src={user.avatar_url} alt={`${user.name}@GitHub`} />
           <Icon name="github" className={styles.githubIcon} size="4x" />
         </figure>
+        <div className={styles.data}>
+          <div className={styles.item}>
+            <div className={styles.itemNumber}>
+              { user.public_repos }
+            </div>
+            <div>Repos</div>
+          </div>
+          <div className={styles.item}>
+            <div className={styles.itemNumber}>
+              { user.public_gists }
+            </div>
+            <div>Gists</div>
+          </div>
+          <div className={styles.item}>
+            <div className={styles.itemNumber}>
+              { user.followers }
+            </div>
+            <div>followers</div>
+          </div>
+        </div>
       </div>
     );
   }
 
+
   render() {
     const repos = this.props.repos.map((repo) => (
-      <div>
+      <div key={repo.html_url}>
         <a href={repo.html_url}>{repo.stargazers_count}</a>
         <span>{' '}</span>
         <a href={repo.html_url}>{repo.name}</a>
         <span>{repo.language}</span>
-        <a href={repo.issues_url}><FormattedMessage {...messages.issuesCount} />{repo.issues_count}</a>
+        <a href={`${repo.html_url}/issues`}><FormattedMessage {...messages.issuesCount} />{repo.issues_count}</a>
 
         { repo.fork && (<FormattedMessage {...messages.forkedFrom} />) }
       </div>
     ));
     const prs = this.props.prs.map((pr) => (
-      <div>
+      <div key={pr.html_url}>
         {pr.title}
       </div>
     ));
 
     const user = this.props.githubUser;
-
+    const { index } = this.state;
     return (
       <div className={styles.github}>
         <Helmet
@@ -73,18 +126,28 @@ export class GitHubSummary extends React.Component {
 
         { this.renderGithubCard(user) }
 
-        <div>
-          <h2 className={styles.title}>
-            <FormattedMessage {...messages.prsTitle} />
-          </h2>
-          { prs }
-        </div>
-        <div>
-          <h2 className={styles.title}>
-            <FormattedMessage {...messages.reposTitle} />
-          </h2>
-          { repos }
-        </div>
+        <MuiThemeProvider muiTheme={getMuiTheme()}>
+          <div>
+            <Tabs value={index}>
+              <Tab label="Repositories" value={0} onClick={() => { this.handleChangeIndex(0); }} />
+              <Tab label="Pull Requests" value={1} onClick={() => { this.handleChangeIndex(1); }} />
+            </Tabs>
+            <SwipeableViews index={index} onChangeIndex={this.handleChangeIndex} className={styles.swipeableView}>
+              <div style={Object.assign({}, slideStyles.slide, slideStyles.slide1)}>
+                <h2 className={styles.title}>
+                  <FormattedMessage {...messages.reposTitle} />
+                </h2>
+                { repos }
+              </div>
+              <div style={Object.assign({}, slideStyles.slide, slideStyles.slide2)}>
+                <h2 className={styles.title}>
+                  <FormattedMessage {...messages.prsTitle} />
+                </h2>
+                { prs }
+              </div>
+            </SwipeableViews>
+          </div>
+        </MuiThemeProvider>
       </div>
     );
   }
