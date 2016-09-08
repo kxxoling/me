@@ -9,7 +9,7 @@ import {
   loadPrsSuccess,
   loadGithubUser,
   loadGithubUserError,
-  loadGithubUserSuccess
+  loadGithubUserSuccess,
 } from './actions';
 
 import request from 'utils/request';

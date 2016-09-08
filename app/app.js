@@ -87,7 +87,6 @@ if (!window.Intl) {
     System.import('intl'),
     System.import('intl/locale-data/jsonp/en.js'),
     System.import('intl/locale-data/jsonp/zh.js'),
-      System.import('intl/locale-data/jsonp/zh.js'),
   ]).then(() => render(translationMessages));
 } else {
   render(translationMessages);

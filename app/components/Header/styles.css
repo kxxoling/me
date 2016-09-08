@@ -1,3 +1,11 @@
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
 .header { /* stylelint-ignore */
   height: 100%;
   position: fixed;
@@ -7,15 +15,8 @@
   z-index: 1;
 }
 
-a {
-  text-decoration: none;
-}
-li {
-  list-style-type: none;
-}
-
 .icon {
-  color: #fefefe;
+  color: #FEFEFE;
 }
 
 .iconContainer {
