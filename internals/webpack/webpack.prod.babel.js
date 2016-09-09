@@ -20,6 +20,7 @@ module.exports = require('./webpack.base.babel')({
   output: {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].chunk.js',
+    publicPath: '/me/',
   },
 
   // We use ExtractTextPlugin so we get a seperate CSS file instead
@@ -86,7 +87,7 @@ module.exports = require('./webpack.base.babel')({
     // assets manipulations and do leak its manipulations to HtmlWebpackPlugin
     new OfflinePlugin({
       relativePaths: false,
-      publicPath: '/',
+      publicPath: '/me/',
 
       // No need to cache .htaccess. See http://mxs.is/googmp,
       // this is applied before any match in `caches` section
