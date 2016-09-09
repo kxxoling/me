@@ -4,13 +4,13 @@
 
 import expect from 'expect';
 import configureStore from '../../app/store';
-import { browserHistory } from 'react-router';
+import { hashHistory } from 'react-router';
 
 describe('configureStore', () => {
   let store;
 
   before(() => {
-    store = configureStore({}, browserHistory);
+    store = configureStore({}, hashHistory);
   });
 
   describe('asyncReducers', () => {
