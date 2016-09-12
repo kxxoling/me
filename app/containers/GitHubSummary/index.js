@@ -53,7 +53,6 @@ export class GitHubSummary extends React.Component {
     this.props.fetchRepos();
     this.props.fetchPrs();
     this.props.fetchGithubUser();
-    this.handleChangeTabs.bind(this);
     this.handleChangeIndex.bind(this);
   }
 
@@ -93,7 +92,6 @@ export class GitHubSummary extends React.Component {
       </div>
     );
   }
-
 
   render() {
     const repos = this.props.repos.map((repo) => (
