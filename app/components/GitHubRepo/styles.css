@@ -1,0 +1,54 @@
+.gitHubRepo { /* stylelint-ignore */
+
+}
+
+.repoCard {
+  margin: 10px;
+
+  width: 360px;
+
+  border-radius: 5px;
+  padding: 8px 8px 0;
+  background: #fff;
+  color: #555;
+  position: relative;
+}
+
+.header {
+  padding: 3px 0 4px 57px;
+  position: relative;
+}
+
+.footer {
+  border-top: 1px solid #eee;
+  padding: 8px 0 6px;
+}
+
+.status {
+  font-size: 10px;
+  padding-right: 10px;
+  text-transform: uppercase;
+}
+.name {
+  display: block;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.createdBy {
+  font-size: 14px;
+}
+
+.lang {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  color: #fff;
+  border-radius: 4px;
+  background: #707070;
+  text-align: center;
+  font-size: 36px;
+}

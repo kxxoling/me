@@ -10,7 +10,9 @@ import Tab from 'material-ui/Tabs/Tab';
 import SwipeableViews from 'react-swipeable-views';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import 'flexboxgrid';
 
+import GitHubRepo from '../../components/GitHubRepo';
 import messages from './messages';
 import {
   selectLoadingRepos,
@@ -94,17 +96,8 @@ export class GitHubSummary extends React.Component {
   }
 
   render() {
-    const repos = this.props.repos.map((repo) => (
-      <div key={repo.html_url}>
-        <a href={repo.html_url}>{repo.stargazers_count}</a>
-        <span>{' '}</span>
-        <a href={repo.html_url}>{repo.name}</a>
-        <span>{repo.language}</span>
-        <a href={`${repo.html_url}/issues`}><FormattedMessage {...messages.issuesCount} />{repo.issues_count}</a>
+    const repos = this.props.repos.map((repo) => (<GitHubRepo repo={repo} />));
 
-        { repo.fork && (<FormattedMessage {...messages.forkedFrom} />) }
-      </div>
-    ));
     const prs = this.props.prs.map((pr) => (
       <div key={pr.html_url}>
         {pr.title}
@@ -131,10 +124,7 @@ export class GitHubSummary extends React.Component {
               <Tab label="Pull Requests" value={1} onClick={() => { this.handleChangeIndex(1); }} />
             </Tabs>
             <SwipeableViews index={index} onChangeIndex={this.handleChangeIndex} className={styles.swipeableView}>
-              <div style={Object.assign({}, slideStyles.slide, slideStyles.slide1)}>
-                <h2 className={styles.title}>
-                  <FormattedMessage {...messages.reposTitle} />
-                </h2>
+              <div style={Object.assign({}, slideStyles.slide, slideStyles.slide1)} className={`${styles.reposContainer} row`}>
                 { repos }
               </div>
               <div style={Object.assign({}, slideStyles.slide, slideStyles.slide2)}>
