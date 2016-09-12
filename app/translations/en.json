@@ -15,11 +15,6 @@
     "message": ""
   },
   {
-    "id": "app.components.HomePage.bio",
-    "defaultMessage": "This is HomePage components !",
-    "message": ""
-  },
-  {
     "id": "app.components.HomePage.name",
     "defaultMessage": "Kane Blueriver",
     "message": ""

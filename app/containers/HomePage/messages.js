@@ -12,7 +12,7 @@ export default defineMessages({
   },
   bio: {
     id: 'app.components.HomePage.bio',
-    defaultMessage: 'This is HomePage components !',
+    defaultMessage: 'Welcome to my site!',
   },
   title: {
     id: 'app.components.HomePage.title',

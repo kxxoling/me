@@ -35,12 +35,9 @@ export default class HomePage extends React.Component { // eslint-disable-line r
               <FormattedMessage {...messages.name} />
             </figcaption>
           </figure>
-          <div className="bio">
-            <p className="bioItem">
+          <div className={styles.bioContainer}>
+            <p className={styles.bioItem}>
               <FormattedMessage {...messages.bio} />
-            </p>
-            <p className="bioItem">
-              Some self introduction.
             </p>
           </div>
         </div>
