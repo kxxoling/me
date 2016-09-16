@@ -1,15 +1,12 @@
 .gitHubRepo { /* stylelint-ignore */
-
 }
 
 .repoCard {
   margin: 10px;
-
   width: 360px;
-
   border-radius: 5px;
   padding: 8px 8px 0;
-  background: #fff;
+  background: #FFF;
   color: #555;
   position: relative;
 }
@@ -20,7 +17,7 @@
 }
 
 .footer {
-  border-top: 1px solid #eee;
+  border-top: 1px solid #EEE;
   padding: 8px 0 6px;
 }
 
@@ -29,6 +26,7 @@
   padding-right: 10px;
   text-transform: uppercase;
 }
+
 .name {
   display: block;
   font-size: 18px;
@@ -46,7 +44,7 @@
   left: 0;
   width: 48px;
   height: 48px;
-  color: #fff;
+  color: #FFF;
   border-radius: 4px;
   background: #707070;
   text-align: center;
